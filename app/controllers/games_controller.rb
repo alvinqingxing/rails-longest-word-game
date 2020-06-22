@@ -3,8 +3,8 @@ require "open-uri"
 class GamesController < ApplicationController
 
   def new
-    @letters = Array.new(7) { ('A'..'Z').to_a.sample }
-    @letters += Array.new(3) { %w(A E I O U Y).sample }
+    @letters = Array.new(8) { ('A'..'Z').to_a.sample }
+    @letters += Array.new(2) { %w(A E I O U Y).sample }
   end
 
   def score
