@@ -1,0 +1,13 @@
+<div class="container">
+<h1>Result</h1>
+<% if @in_grid %>
+  <% if @in_dictionary %>
+    <p>Yes, <strong><%= @word %></strong> is an English word</p>
+  <% else %>
+    <p><strong><%= @word %></strong> is not an English word</p>
+  <% end %>
+<% else %>
+  <p>The letters in <strong><%= @word %></strong> don't all come from <%= @letters.join(", ") %></p>
+<% end %>
+<%= link_to "Play again?", new_path %>
+</div>
