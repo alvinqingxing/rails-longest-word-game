@@ -3,13 +3,13 @@ require "open-uri"
 class GamesController < ApplicationController
 
   def new
-    @letters = Array.new(8) { ('A'..'Z').to_a.sample }
-    @letters += Array.new(2) { %w(A E I O U Y).sample }
+    @letters = Array.new(8) { ('a'..'z').to_a.sample }
+    @letters += Array.new(2) { %w(a e i o u).sample }
   end
 
   def score
     @letters = params[:letters].split
-    @word = params[:word].upcase
+    @word = params[:word]
     @in_grid = in_grid?(@word, @letters)
     @in_dictionary = in_dictionary?(@word)
   end
@@ -17,7 +17,7 @@ class GamesController < ApplicationController
   private
 
   def in_grid?(word, letters)
-    word.chars.all? { |letter| word.count(letter) <= letters.count(letter) }
+    word.downcase.chars.all? { |letter| word.downcase.count(letter) <= letters.count(letter) }
   end
 
   def in_dictionary?(word)

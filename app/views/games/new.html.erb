@@ -9,11 +9,7 @@
 <form action="/score" method="POST" class="form-inline">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <%= hidden_field_tag :letters, @letters %>
-  <div class="input-group input-group">
-    <input type="text" name="word" class="form-control">
-    <span class="input-group-btn">
-      <input type="submit" value="Play" class="btn btn-default">
-    </span>
-  </div>
+    <input type="text" name="word">
+    <input type="submit" class="button">
 </form>
 </div>

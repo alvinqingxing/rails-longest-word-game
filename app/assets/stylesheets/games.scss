@@ -5,11 +5,21 @@ body {
   font-weight: lighter;
   padding: 0 24px;
 }
-
 h1, h2 {
   font-weight: normal;
 }
-
+.button {
+  color: white;
+  padding: 5px 10px;
+  font-weight: normal;
+  background: blue;
+}
+.button:hover {
+  opacity: .9;
+  font-weight: lighter;
+  position: relative;
+  top: 1px;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -17,7 +27,6 @@ h1, h2 {
   text-align: center;
   align-items: center;
 }
-
 .letters {
   padding: 5px;
   font-size: 24px;
